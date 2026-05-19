@@ -126,6 +126,7 @@ while ip < len(program):
         out.write("; --PRINT ---\n")
         out.write(f"\tLEA rcx, [rel string_literal_{string_literal_index}]\n")
         out.write(f"\tXOR eax, eax\n")
+        out.write(f"\tCALL printf\n")
     elif opcode == "READ":
         out.write(f"; READ ---\n")
         out.write("; NOT IMPLEMENTED \n")

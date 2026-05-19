@@ -5,6 +5,7 @@ default rel
 section .bss
 ; -- contants --
 section .data
+string_literal_0: db "[[...]]", 0
 ; -- entry point --
 section .text
 global main
@@ -23,7 +24,9 @@ main:
 	POP rax
 	ADD qword [rsp], rax
 ; --PRINT ---
-; NOT IMPLEMENTED 
+	LEA rcx, [rel string_literal_0]
+	XOR eax, eax
+	CALL printf
 ; HALT ---
 	JMP EXIT_LABEL
 EXIT_LABEL:
